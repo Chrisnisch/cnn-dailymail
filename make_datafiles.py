@@ -47,7 +47,7 @@ def tokenize_stories(stories_dir, tokenized_stories_dir):
                     os.path.join(tokenized_stories_dir, s)
                 )
             )
-    command = ['java', 'edu.stanford.nlp.process.PTBTokenizer',
+    command = ['java', '-cp', '../stanford-corenlp-4.5.10/stanford-corenlp-4.5.10.jar', 'edu.stanford.nlp.process.PTBTokenizer',
                '-ioFileList', '-preserveLines', 'mapping.txt']
     print("Tokenizing {} files in {} and saving in {}...".format(
         len(stories), stories_dir, tokenized_stories_dir))
